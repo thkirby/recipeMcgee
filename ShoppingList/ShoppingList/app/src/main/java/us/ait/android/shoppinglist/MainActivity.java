@@ -14,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ import us.ait.android.shoppinglist.adapter.ItemAdapter;
 import us.ait.android.shoppinglist.data.AppDatabase;
 import us.ait.android.shoppinglist.data.Item;
 import us.ait.android.shoppinglist.dialog.CreateAndEditItemDialog;
+import us.ait.android.shoppinglist.dialog.EnterUrlDialog;
 import us.ait.android.shoppinglist.touch.ItemListTouchHelperCallback;
 
 public class MainActivity extends AppCompatActivity implements CreateAndEditItemDialog.ItemHandler{
@@ -47,6 +49,15 @@ public class MainActivity extends AppCompatActivity implements CreateAndEditItem
                 showCreateItemDialog();
             }
         });
+
+        Button inputUrl = findViewById(R.id.inputUrl);
+        inputUrl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showEnterUrlDialog();
+            }
+        });
+
 
         RecyclerView recyclerViewItems = findViewById(
                 R.id.recyclerViewItems);
@@ -81,6 +92,10 @@ public class MainActivity extends AppCompatActivity implements CreateAndEditItem
 
     private void showCreateItemDialog() {
         new CreateAndEditItemDialog().show(getSupportFragmentManager(), "CreateAndEditItemDialog");
+    }
+
+    private void showEnterUrlDialog(){
+        new EnterUrlDialog().show(getSupportFragmentManager(), "EnterUrlDialog");
     }
 
     public void showEditItemDialog(Item item) {

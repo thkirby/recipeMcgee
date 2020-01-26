@@ -5,12 +5,20 @@
 
 package us.ait.android.shoppinglist.dialog;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v7.app.AlertDialog;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import us.ait.android.shoppinglist.R;
 import us.ait.android.shoppinglist.data.Item;
 
-public class EnterUrlDialog {
+public class EnterUrlDialog extends DialogFragment {
+
     public interface ItemHandler {
         void onNewItemCreated(Item item);
 
@@ -21,4 +29,21 @@ public class EnterUrlDialog {
     private Spinner spinnerItemType;
     private EditText etUrl;
     private Item itemToEdit = null;
+
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstance){
+        android.support.v7.app.AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("Input URL");
+        View rootView = getActivity().getLayoutInflater().inflate(R.layout.create_dialog_url, null);
+
+        etUrl = rootView.findViewById(R.id.etUrl);
+        builder.setView(rootView);
+        builder.setPositiveButton(getString(R.string.btn_save), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        return builder.create();
+    }
 }

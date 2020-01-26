@@ -8,6 +8,15 @@
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/inputUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/url_button"
+        android:visibility="visible"
+        app:layout_anchor="@+id/recyclerViewItems"
+        app:layout_anchorGravity="top|left" />
+
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
@@ -40,13 +49,16 @@
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
+
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerViewItems"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" >
+
+    </android.support.v7.widget.RecyclerView>
 
 
     <android.support.design.widget.FloatingActionButton

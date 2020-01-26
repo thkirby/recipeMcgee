@@ -26,4 +26,5 @@
     <string name="confirmation_message">Are You Sure You Want to Remove All Items From Your List?</string>
     <string name="confirm_button">Confirm</string>
     <string name="cancel_button">Cancel</string>
+    <string name="url_button">Enter URL</string>
 </resources>
