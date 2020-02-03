@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Splitter {
 	public static void main(String[] args){
 		String ingr = "Flour 50 grams";
@@ -20,17 +22,30 @@ class Splitter {
 	}
 
 	public static String[] splitIngr(String str){
-		String[] ret[2];
-		ArrayList parts = str.split(" ");
-		String[] remove = ["of"];
-
-		parts.removeAll(remove);
+		String[] ret = new String[2];
+		ret[0] = "";
+		ret[1] = "";
+		String[] parts;
+		parts = str.split(" ");
+		List<String> remove = Arrays.asList("of", "diced");
+		List<String> measurements = Arrays.asList("cup", "cups", "g", "mg", 
+							  "grams", "gram", "oz",
+							  "ounces");
 
 		for (int i = 0; i < parts.length; i++){
-			if (isNumeric(String[i])){
-				
-				i = i-1;
+			if (isNumeric(parts[i])){
+				ret[1] = parts[i] + " " + ret[1];
 			}
+			else if (measurements.contains(parts[i])){
+				ret[1] = ret[1] + parts[i];
+			}
+			else if (remove.contains(parts[i])){
+				; //do nothing
+			}
+			else {
+				ret[0] = ret[0] + parts[i] + " ";
+			}
+
 		}
 
 		return ret;
