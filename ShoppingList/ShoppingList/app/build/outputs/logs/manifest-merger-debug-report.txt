@@ -1,0 +1,136 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:2:1-25:12
+MERGED from [com.android.support:design:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/69b937ec0043bb3b196f04063185d21d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/80d3595fcd6d9020272cd2ab10b65024/AndroidManifest.xml:17:1-22:12
+MERGED from [com.jakewharton:butterknife:8.8.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/02ac503eadcd34a1f6a5d195a6957701/AndroidManifest.xml:2:1-7:12
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.1.1.aar/9fdfa23842cf0350e0e545fd67e213f4/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence.room:runtime:1.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/327d0df6b6b98c516c69df3f757a53f5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/d6f98ddc835d4fccfe5f378cb5113d45/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/3351bd668677aaec0710f1b1501a9cb8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/82670749d068591dc3b41fd066974e3d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/93c8e5b164cb7cd9b628c1c208169412/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/328d2938db47e79411d5819044fd02bd/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/ac5cbf7c90c1921e475a453728672f3e/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence:db-framework:1.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/db-framework-1.1.1.aar/aaf0058dfb3d281e3550df41bc21c075/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence:db:1.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/db-1.1.1.aar/e22c6545e4cd68e0eb6d4c9d440f33b1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/77dfb9d7676cb6f946e69d35711df65a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/52aab26fff902324b80b925530f46da4/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/37dd6eb493476f8449aa2bbdf14cf698/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/e42e0c87f16e91bb088f9aaef85d2944/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/hugh/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/365087b8987a842d1c40f6be56b42c92/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/d62d59e86fb3e116ceb0abc8008c830b/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/hugh/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/04ecd54a6ad46426ad78008edcf3af2e/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/hugh/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/c81256b4a78421a3db98ae33126a1acf/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:2:1-25:12
+	package
+		ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:3:5-42
+		INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml
+		INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml
+		ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:2:1-25:12
+		INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml
+		ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:2:1-25:12
+		INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:4:5-66
+	android:name
+		ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:4:22-64
+application
+ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:6:5-23:19
+	android:supportsRtl
+		ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:11:9-35
+	android:label
+		ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:9:9-41
+	android:roundIcon
+		ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:10:9-54
+	android:icon
+		ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:8:9-43
+	android:allowBackup
+		ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:7:9-35
+	android:theme
+		ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:12:9-40
+activity#us.ait.android.shoppinglist.MainActivity
+ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:13:9-22:20
+	android:label
+		ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:15:13-45
+	android:theme
+		ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:16:13-47
+	android:name
+		ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:14:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:17:13-21:29
+action#android.intent.action.MAIN
+ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:18:17-69
+	android:name
+		ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:18:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:20:17-77
+	android:name
+		ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml:20:27-74
+uses-sdk
+INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml
+INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:design:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/69b937ec0043bb3b196f04063185d21d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/69b937ec0043bb3b196f04063185d21d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/80d3595fcd6d9020272cd2ab10b65024/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/80d3595fcd6d9020272cd2ab10b65024/AndroidManifest.xml:20:5-44
+MERGED from [com.jakewharton:butterknife:8.8.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/02ac503eadcd34a1f6a5d195a6957701/AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton:butterknife:8.8.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/02ac503eadcd34a1f6a5d195a6957701/AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.1.1.aar/9fdfa23842cf0350e0e545fd67e213f4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.1.1.aar/9fdfa23842cf0350e0e545fd67e213f4/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence.room:runtime:1.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/327d0df6b6b98c516c69df3f757a53f5/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence.room:runtime:1.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/327d0df6b6b98c516c69df3f757a53f5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/d6f98ddc835d4fccfe5f378cb5113d45/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/d6f98ddc835d4fccfe5f378cb5113d45/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/3351bd668677aaec0710f1b1501a9cb8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/3351bd668677aaec0710f1b1501a9cb8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/82670749d068591dc3b41fd066974e3d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/82670749d068591dc3b41fd066974e3d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/93c8e5b164cb7cd9b628c1c208169412/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/93c8e5b164cb7cd9b628c1c208169412/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/328d2938db47e79411d5819044fd02bd/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/328d2938db47e79411d5819044fd02bd/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/ac5cbf7c90c1921e475a453728672f3e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/ac5cbf7c90c1921e475a453728672f3e/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db-framework:1.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/db-framework-1.1.1.aar/aaf0058dfb3d281e3550df41bc21c075/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db-framework:1.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/db-framework-1.1.1.aar/aaf0058dfb3d281e3550df41bc21c075/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db:1.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/db-1.1.1.aar/e22c6545e4cd68e0eb6d4c9d440f33b1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db:1.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/db-1.1.1.aar/e22c6545e4cd68e0eb6d4c9d440f33b1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/77dfb9d7676cb6f946e69d35711df65a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/77dfb9d7676cb6f946e69d35711df65a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/52aab26fff902324b80b925530f46da4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/52aab26fff902324b80b925530f46da4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/37dd6eb493476f8449aa2bbdf14cf698/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/37dd6eb493476f8449aa2bbdf14cf698/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/e42e0c87f16e91bb088f9aaef85d2944/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/e42e0c87f16e91bb088f9aaef85d2944/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/hugh/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/365087b8987a842d1c40f6be56b42c92/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/hugh/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/365087b8987a842d1c40f6be56b42c92/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/d62d59e86fb3e116ceb0abc8008c830b/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /home/hugh/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/d62d59e86fb3e116ceb0abc8008c830b/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/hugh/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/04ecd54a6ad46426ad78008edcf3af2e/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/hugh/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/04ecd54a6ad46426ad78008edcf3af2e/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/hugh/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/c81256b4a78421a3db98ae33126a1acf/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/hugh/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/c81256b4a78421a3db98ae33126a1acf/AndroidManifest.xml:20:5-44
+INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml
+INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml
+		ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml
+		INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml
+		ADDED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml
+		INJECTED from /home/hugh/Documents/RecipeMcGee/recipeMcgee/ShoppingList/ShoppingList/app/src/main/AndroidManifest.xml
