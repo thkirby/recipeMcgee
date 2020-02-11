@@ -3,10 +3,12 @@ package mcgee.recipee.webscraping;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.ListView;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -14,12 +16,14 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button getBtn;
     private TextView result;
-    RelativeLayout rl =new RelativeLayout(this);
+    //RelativeLayout rl =new RelativeLayout(this);
+    public ArrayList<String> arrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
                 getWebsite();
             }
         });
+        final ListView list = findViewById(R.id.list_view);
+
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_selectable_list_item, arrayList);
+        list.setAdapter(arrayAdapter);
     }
 
     private void getWebsite() {
@@ -49,9 +58,9 @@ public class MainActivity extends AppCompatActivity {
                     builder.append(title).append("\n");
 
                     for (Element ingredient : ingredients) {
-                        CheckBox ch = new CheckBox(getApplicationContext());
-                        ch.setText(builder.append("\n").append(ingredient.text()));
-                        rl.addView(ch);
+                        //CheckBox ch = new CheckBox(getApplicationContext());
+                        //ch.setText(builder.append("\n").append(ingredient.text()));
+                        arrayList.add(ingredient.text());
                     }
                 } catch (IOException e) {
                     builder.append("Error : ").append(e.getMessage()).append("\n");
