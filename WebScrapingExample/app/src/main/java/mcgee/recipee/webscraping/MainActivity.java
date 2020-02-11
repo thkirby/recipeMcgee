@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.jsoup.Jsoup;
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button getBtn;
     private TextView result;
+    RelativeLayout rl =new RelativeLayout(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
                     builder.append(title).append("\n");
 
                     for (Element ingredient : ingredients) {
-                        builder.append("\n").append("Ingredient : ").append(ingredient.text());
+                        CheckBox ch = new CheckBox(getApplicationContext());
+                        ch.setText(builder.append("\n").append(ingredient.text()));
+                        rl.addView(ch);
                     }
                 } catch (IOException e) {
                     builder.append("Error : ").append(e.getMessage()).append("\n");
