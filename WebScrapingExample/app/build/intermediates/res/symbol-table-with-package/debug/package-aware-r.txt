@@ -11,6 +11,8 @@ anim abc_slide_out_bottom
 anim abc_slide_out_top
 anim abc_tooltip_enter
 anim abc_tooltip_exit
+anim down_from_top
+anim up_from_bottom
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -674,6 +676,7 @@ id barrier
 id beginning
 id blocking
 id bottom
+id box
 id button
 id buttonPanel
 id center
@@ -693,6 +696,7 @@ id default_activity_button
 id dimensions
 id direct
 id disableHome
+id editText9
 id edit_query
 id end
 id expand_activities_button
@@ -718,9 +722,11 @@ id line1
 id line3
 id listMode
 id list_item
+id list_view
 id message
 id middle
 id multiply
+id name
 id never
 id none
 id normal
@@ -733,6 +739,7 @@ id parentPanel
 id percent
 id progress_circular
 id progress_horizontal
+id quantity
 id radio
 id result
 id right
@@ -819,6 +826,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout listitem
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big

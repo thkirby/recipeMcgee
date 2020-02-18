@@ -3,8 +3,12 @@ package mcgee.recipee.webscraping;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.ListView;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -12,11 +16,15 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button getBtn;
     private TextView result;
+    //RelativeLayout rl =new RelativeLayout(this);
+    public ArrayList<Ingredient> arrayList = new ArrayList<>();
+    CustomAdapter arrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
                 getWebsite();
             }
         });
+        final ListView list = findViewById(R.id.list_view);
+        arrayAdapter = new CustomAdapter(arrayList, this);
+        list.setAdapter(arrayAdapter);
     }
 
     private void getWebsite() {
@@ -45,9 +56,16 @@ public class MainActivity extends AppCompatActivity {
 
                     builder.append(title).append("\n");
 
+                    String[] splitStr = new String[2];
                     for (Element ingredient : ingredients) {
-                        builder.append("\n").append("Ingredient : ").append(ingredient.text());
+                        //CheckBox ch = new CheckBox(getApplicationContext());
+                        //ch.setText(builder.append("\n").append(ingredient.text()));
+                        splitStr = Splitter.splitIngr(ingredient.text());
+
+                        arrayList.add(new Ingredient(splitStr[0], Float.parseFloat(splitStr[1]), splitStr[2]));
                     }
+
+
                 } catch (IOException e) {
                     builder.append("Error : ").append(e.getMessage()).append("\n");
                 }
@@ -56,9 +74,11 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         result.setText(builder.toString());
+                        arrayAdapter.notifyDataSetChanged();
                     }
                 });
             }
         }).start();
+
     }
 }
