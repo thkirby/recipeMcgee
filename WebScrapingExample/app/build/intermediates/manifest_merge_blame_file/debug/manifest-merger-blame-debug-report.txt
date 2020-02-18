@@ -6,43 +6,46 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="27"
-8-->/home/hugh/Documents/RecipeMcGee/recipeMcgee/WebScrapingExample/app/src/main/AndroidManifest.xml
+8-->D:\Documents\GitHub\recipeMcgee\WebScrapingExample\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="27" />
-9-->/home/hugh/Documents/RecipeMcGee/recipeMcgee/WebScrapingExample/app/src/main/AndroidManifest.xml
+9-->D:\Documents\GitHub\recipeMcgee\WebScrapingExample\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/home/hugh/Documents/RecipeMcGee/recipeMcgee/WebScrapingExample/app/src/main/AndroidManifest.xml:4:5-66
-11-->/home/hugh/Documents/RecipeMcGee/recipeMcgee/WebScrapingExample/app/src/main/AndroidManifest.xml:4:22-64
+11-->D:\Documents\GitHub\recipeMcgee\WebScrapingExample\app\src\main\AndroidManifest.xml:4:5-66
+11-->D:\Documents\GitHub\recipeMcgee\WebScrapingExample\app\src\main\AndroidManifest.xml:4:22-64
 12
 13    <application
-13-->/home/hugh/Documents/RecipeMcGee/recipeMcgee/WebScrapingExample/app/src/main/AndroidManifest.xml:5:5-19:19
+13-->D:\Documents\GitHub\recipeMcgee\WebScrapingExample\app\src\main\AndroidManifest.xml:5:5-20:19
 14        android:allowBackup="true"
-14-->/home/hugh/Documents/RecipeMcGee/recipeMcgee/WebScrapingExample/app/src/main/AndroidManifest.xml:6:9-35
-15        android:debuggable="true"
-16        android:icon="@mipmap/ic_launcher"
-16-->/home/hugh/Documents/RecipeMcGee/recipeMcgee/WebScrapingExample/app/src/main/AndroidManifest.xml:7:9-43
-17        android:label="@string/app_name"
-17-->/home/hugh/Documents/RecipeMcGee/recipeMcgee/WebScrapingExample/app/src/main/AndroidManifest.xml:8:9-41
-18        android:roundIcon="@mipmap/ic_launcher_round"
-18-->/home/hugh/Documents/RecipeMcGee/recipeMcgee/WebScrapingExample/app/src/main/AndroidManifest.xml:9:9-54
-19        android:supportsRtl="true"
-19-->/home/hugh/Documents/RecipeMcGee/recipeMcgee/WebScrapingExample/app/src/main/AndroidManifest.xml:10:9-35
-20        android:theme="@style/AppTheme" >
-20-->/home/hugh/Documents/RecipeMcGee/recipeMcgee/WebScrapingExample/app/src/main/AndroidManifest.xml:11:9-40
-21        <activity android:name="mcgee.recipee.webscraping.MainActivity" >
-21-->/home/hugh/Documents/RecipeMcGee/recipeMcgee/WebScrapingExample/app/src/main/AndroidManifest.xml:12:9-18:20
-21-->/home/hugh/Documents/RecipeMcGee/recipeMcgee/WebScrapingExample/app/src/main/AndroidManifest.xml:12:19-47
-22            <intent-filter>
-22-->/home/hugh/Documents/RecipeMcGee/recipeMcgee/WebScrapingExample/app/src/main/AndroidManifest.xml:13:13-17:29
-23                <action android:name="android.intent.action.MAIN" />
-23-->/home/hugh/Documents/RecipeMcGee/recipeMcgee/WebScrapingExample/app/src/main/AndroidManifest.xml:14:17-69
-23-->/home/hugh/Documents/RecipeMcGee/recipeMcgee/WebScrapingExample/app/src/main/AndroidManifest.xml:14:25-66
-24
-25                <category android:name="android.intent.category.LAUNCHER" />
-25-->/home/hugh/Documents/RecipeMcGee/recipeMcgee/WebScrapingExample/app/src/main/AndroidManifest.xml:16:17-77
-25-->/home/hugh/Documents/RecipeMcGee/recipeMcgee/WebScrapingExample/app/src/main/AndroidManifest.xml:16:27-74
-26            </intent-filter>
-27        </activity>
-28    </application>
-29
-30</manifest>
+14-->D:\Documents\GitHub\recipeMcgee\WebScrapingExample\app\src\main\AndroidManifest.xml:6:9-35
+15        android:configChanges="keyboardHidden|orientation|screenSize"
+15-->D:\Documents\GitHub\recipeMcgee\WebScrapingExample\app\src\main\AndroidManifest.xml:9:9-70
+16        android:debuggable="true"
+17        android:icon="@mipmap/ic_launcher"
+17-->D:\Documents\GitHub\recipeMcgee\WebScrapingExample\app\src\main\AndroidManifest.xml:7:9-43
+18        android:label="@string/app_name"
+18-->D:\Documents\GitHub\recipeMcgee\WebScrapingExample\app\src\main\AndroidManifest.xml:8:9-41
+19        android:roundIcon="@mipmap/ic_launcher_round"
+19-->D:\Documents\GitHub\recipeMcgee\WebScrapingExample\app\src\main\AndroidManifest.xml:10:9-54
+20        android:supportsRtl="true"
+20-->D:\Documents\GitHub\recipeMcgee\WebScrapingExample\app\src\main\AndroidManifest.xml:11:9-35
+21        android:testOnly="true"
+22        android:theme="@style/AppTheme" >
+22-->D:\Documents\GitHub\recipeMcgee\WebScrapingExample\app\src\main\AndroidManifest.xml:12:9-40
+23        <activity android:name="mcgee.recipee.webscraping.MainActivity" >
+23-->D:\Documents\GitHub\recipeMcgee\WebScrapingExample\app\src\main\AndroidManifest.xml:13:9-19:20
+23-->D:\Documents\GitHub\recipeMcgee\WebScrapingExample\app\src\main\AndroidManifest.xml:13:19-47
+24            <intent-filter>
+24-->D:\Documents\GitHub\recipeMcgee\WebScrapingExample\app\src\main\AndroidManifest.xml:14:13-18:29
+25                <action android:name="android.intent.action.MAIN" />
+25-->D:\Documents\GitHub\recipeMcgee\WebScrapingExample\app\src\main\AndroidManifest.xml:15:17-69
+25-->D:\Documents\GitHub\recipeMcgee\WebScrapingExample\app\src\main\AndroidManifest.xml:15:25-66
+26
+27                <category android:name="android.intent.category.LAUNCHER" />
+27-->D:\Documents\GitHub\recipeMcgee\WebScrapingExample\app\src\main\AndroidManifest.xml:17:17-77
+27-->D:\Documents\GitHub\recipeMcgee\WebScrapingExample\app\src\main\AndroidManifest.xml:17:27-74
+28            </intent-filter>
+29        </activity>
+30    </application>
+31
+32</manifest>

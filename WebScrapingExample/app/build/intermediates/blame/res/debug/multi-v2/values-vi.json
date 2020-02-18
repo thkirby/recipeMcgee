@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/hugh/Documents/RecipeMcGee/recipeMcgee/WebScrapingExample/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-vi/values-vi.xml",
+            "outputFile": "D:\\Documents\\GitHub\\recipeMcgee\\WebScrapingExample\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-vi\\values-vi.xml",
             "map": [
                 {
-                    "source": "/home/hugh/.gradle/caches/transforms-2/files-2.1/34555d386a7eb9ea3045ff1382069509/appcompat-v7-27.1.1/res/values-vi/values-vi.xml",
+                    "source": "C:\\Users\\Hugh\\.gradle\\caches\\transforms-2\\files-2.1\\34555d386a7eb9ea3045ff1382069509\\appcompat-v7-27.1.1\\res\\values-vi\\values-vi.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/hugh/.gradle/caches/transforms-2/files-2.1/d694d7513e1ca99c176cc55df91d4662/support-compat-27.1.1/res/values-vi/values-vi.xml",
+                    "source": "C:\\Users\\Hugh\\.gradle\\caches\\transforms-2\\files-2.1\\d694d7513e1ca99c176cc55df91d4662\\support-compat-27.1.1\\res\\values-vi\\values-vi.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,8 +20,8 @@ public class CustomAdapter extends android.widget.ArrayAdapter<Ingredient>{
     // View lookup cache
     private static class ViewHolder {
         TextView txtName;
-        TextView txtMeasure;
         TextView txtQuantity;
+
     }
 
     public CustomAdapter(ArrayList<Ingredient> data, Context context) {
@@ -57,9 +58,14 @@ public class CustomAdapter extends android.widget.ArrayAdapter<Ingredient>{
             result=convertView;
         }
 
+        Animation animation = AnimationUtils.loadAnimation(mContext, (position > lastPosition) ? R.anim.up_from_bottom : R.anim.down_from_top);
+        result.startAnimation(animation);
+        lastPosition = position;
+
 
         viewHolder.txtName.setText(ingredient.getName());
         viewHolder.txtQuantity.setText(ingredient.getQuantity() + " " + ingredient.getMeasurement());
+
         // Return the completed view to render on screen
         return convertView;
     }

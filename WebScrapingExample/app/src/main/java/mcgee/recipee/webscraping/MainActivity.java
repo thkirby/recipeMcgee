@@ -39,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         final ListView list = findViewById(R.id.list_view);
-
-
         arrayAdapter = new CustomAdapter(arrayList, this);
         list.setAdapter(arrayAdapter);
     }
@@ -58,11 +56,13 @@ public class MainActivity extends AppCompatActivity {
 
                     builder.append(title).append("\n");
 
+                    String[] splitStr = new String[2];
                     for (Element ingredient : ingredients) {
                         //CheckBox ch = new CheckBox(getApplicationContext());
                         //ch.setText(builder.append("\n").append(ingredient.text()));
+                        splitStr = Splitter.splitIngr(ingredient.text());
 
-                        arrayList.add(new Ingredient("test", 0.0f, "test"));
+                        arrayList.add(new Ingredient(splitStr[0], Float.parseFloat(splitStr[1]), splitStr[2]));
                     }
 
 
@@ -74,10 +74,11 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         result.setText(builder.toString());
+                        arrayAdapter.notifyDataSetChanged();
                     }
                 });
             }
         }).start();
-        arrayAdapter.notifyDataSetChanged();
+
     }
 }

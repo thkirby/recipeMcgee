@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ScrollView01"
@@ -80,14 +80,14 @@
         <ListView
             android:id="@+id/list_view"
             style="@android:style/Widget.Material.ListView.DropDown"
-            android:layout_width="wrap_content"
-            android:layout_height="509dp"
+            android:layout_width="414dp"
+            android:layout_height="448dp"
             android:layout_marginTop="48dp"
             android:background="#9EFFFFFF"
             android:divider="@android:drawable/divider_horizontal_bright"
             app:layout_constraintTop_toBottomOf="@+id/editText9"
-            tools:layout_editor_absoluteX="0dp" />
+            tools:layout_editor_absoluteX="-3dp" />
 
     </android.support.constraint.ConstraintLayout>
-</ScrollView>
+</RelativeLayout>
 
