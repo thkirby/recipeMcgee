@@ -23,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private Button getBtn;
     private TextView result;
     //RelativeLayout rl =new RelativeLayout(this);
-    public ArrayList<String> arrayList = new ArrayList<>();
+    public ArrayList<Ingredient> arrayList = new ArrayList<>();
+    CustomAdapter arrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         final ListView list = findViewById(R.id.list_view);
 
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_selectable_list_item, arrayList);
+        arrayAdapter = new CustomAdapter(arrayList, this);
         list.setAdapter(arrayAdapter);
     }
 
@@ -60,8 +61,11 @@ public class MainActivity extends AppCompatActivity {
                     for (Element ingredient : ingredients) {
                         //CheckBox ch = new CheckBox(getApplicationContext());
                         //ch.setText(builder.append("\n").append(ingredient.text()));
-                        arrayList.add(ingredient.text());
+
+                        arrayList.add(new Ingredient("test", 0.0f, "test"));
                     }
+
+
                 } catch (IOException e) {
                     builder.append("Error : ").append(e.getMessage()).append("\n");
                 }
@@ -74,5 +78,6 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         }).start();
+        arrayAdapter.notifyDataSetChanged();
     }
 }

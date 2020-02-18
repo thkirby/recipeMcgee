@@ -1,9 +1,27 @@
 package mcgee.recipee.webscraping;
 
 public class Ingredient {
-    public String name;
-    public float quantity;
-    public String measurement;
+    String name;
+    float quantity;
+    String measurement;
+
+    public Ingredient(String name, float quantity, String measurement){
+        this.name = name;
+        this.quantity = quantity;
+        this.measurement = measurement;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public float getQuantity() {
+        return quantity;
+    }
+
+    public String getMeasurement() {
+        return measurement;
+    }
 }
 
 
