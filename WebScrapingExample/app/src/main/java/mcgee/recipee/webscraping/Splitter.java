@@ -270,14 +270,14 @@ class Splitter {
                 "serving", "and", "drained", "rinsed",
                 "chopped", "can", "cans", "one", "at",
                 "softened", "room", "temperature", "to", "a",
-                "an", "cooked");
+                "an", "cooked", "grated");
         List<String> measurements = Arrays.asList("cup", "cups", "g", "mg",
                 "grams", "gram", "oz",
                 "ounces", "ounce", "pounds",
                 "teaspoon", "teaspoons", "tablespoon",
                 "tablespoons", "tsp", "tbsp");
 
-        str = str.replaceAll("[,:]", "");
+        str = str.replaceAll("[,:]", "").toLowerCase();
         str = fracChar(str);
         str = fracToDec(spaceGrams(str));
         str = writtenNums(str, measurements);

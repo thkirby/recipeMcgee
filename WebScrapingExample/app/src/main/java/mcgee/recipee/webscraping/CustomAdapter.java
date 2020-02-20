@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,10 +19,10 @@ public class CustomAdapter extends android.widget.ArrayAdapter<Ingredient>{
     Context mContext;
 
     // View lookup cache
-    private static class ViewHolder {
+    private static class ViewHolder{
         TextView txtName;
         TextView txtQuantity;
-
+        CheckBox checkBox;
     }
 
     public CustomAdapter(ArrayList<Ingredient> data, Context context) {
@@ -36,7 +37,7 @@ public class CustomAdapter extends android.widget.ArrayAdapter<Ingredient>{
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the data item for this position
-        Ingredient ingredient = getItem(position);
+        final Ingredient ingredient = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         ViewHolder viewHolder; // view lookup cache stored in tag
 
@@ -47,8 +48,9 @@ public class CustomAdapter extends android.widget.ArrayAdapter<Ingredient>{
             viewHolder = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(R.layout.listitem, parent, false);
-            viewHolder.txtName = (TextView) convertView.findViewById(R.id.name);
-            viewHolder.txtQuantity = (TextView) convertView.findViewById(R.id.quantity);
+            viewHolder.txtName = convertView.findViewById(R.id.name);
+            viewHolder.txtQuantity = convertView.findViewById(R.id.quantity);
+            viewHolder.checkBox = convertView.findViewById(R.id.box);
 
             result=convertView;
 
@@ -65,8 +67,17 @@ public class CustomAdapter extends android.widget.ArrayAdapter<Ingredient>{
 
         viewHolder.txtName.setText(ingredient.getName());
         viewHolder.txtQuantity.setText(ingredient.getQuantity() + " " + ingredient.getMeasurement());
+        viewHolder.checkBox.setChecked(ingredient.getChecked());
+
+        viewHolder.checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ingredient.setChecked(!ingredient.getChecked());
+            }
+        });
 
         // Return the completed view to render on screen
         return convertView;
     }
+
 }

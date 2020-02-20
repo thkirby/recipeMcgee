@@ -3,6 +3,7 @@ package mcgee.recipee.webscraping;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         final ListView list = findViewById(R.id.list_view);
         arrayAdapter = new CustomAdapter(arrayList, this);
         list.setAdapter(arrayAdapter);
+
     }
 
     private void getWebsite() {
@@ -56,13 +58,20 @@ public class MainActivity extends AppCompatActivity {
 
                     builder.append(title).append("\n");
 
-                    String[] splitStr = new String[2];
+                    String[] splitStr;
                     for (Element ingredient : ingredients) {
-                        //CheckBox ch = new CheckBox(getApplicationContext());
-                        //ch.setText(builder.append("\n").append(ingredient.text()));
                         splitStr = Splitter.splitIngr(ingredient.text());
-
-                        arrayList.add(new Ingredient(splitStr[0], Float.parseFloat(splitStr[1]), splitStr[2]));
+                        boolean repeatedIngr = false;
+                        for (Ingredient ingr : arrayList){
+                            if (splitStr[0].equals(ingr.getName())){
+                                ingr.setQuantity(ingr.getQuantity() + Float.parseFloat(splitStr[1]));
+                                repeatedIngr = true;
+                                break;
+                            }
+                        }
+                        if (!repeatedIngr) {
+                            arrayList.add(new Ingredient(splitStr[0], Float.parseFloat(splitStr[1]), splitStr[2]));
+                        }
 
                     }
 
@@ -82,4 +91,6 @@ public class MainActivity extends AppCompatActivity {
         }).start();
 
     }
+
+
 }
