@@ -100,12 +100,12 @@
         "source": "C:\\Users\\Hugh\\.gradle\\caches\\transforms-2\\files-2.1\\34555d386a7eb9ea3045ff1382069509\\appcompat-v7-27.1.1\\res\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\Documents\\GitHub\\recipeMcgee\\WebScrapingExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\Hugh\\.gradle\\caches\\transforms-2\\files-2.1\\34555d386a7eb9ea3045ff1382069509\\appcompat-v7-27.1.1\\res\\drawable-hdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
-    },
-    {
         "merged": "D:\\Documents\\GitHub\\recipeMcgee\\WebScrapingExample\\app\\build\\intermediates\\res\\merged\\debug\\anim_up_from_bottom.xml.flat",
         "source": "D:\\Documents\\GitHub\\recipeMcgee\\WebScrapingExample\\app\\src\\main\\res\\anim\\up_from_bottom.xml"
+    },
+    {
+        "merged": "D:\\Documents\\GitHub\\recipeMcgee\\WebScrapingExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\Hugh\\.gradle\\caches\\transforms-2\\files-2.1\\34555d386a7eb9ea3045ff1382069509\\appcompat-v7-27.1.1\\res\\drawable-hdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
         "merged": "D:\\Documents\\GitHub\\recipeMcgee\\WebScrapingExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",

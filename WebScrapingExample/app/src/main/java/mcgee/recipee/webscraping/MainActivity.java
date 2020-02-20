@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         splitStr = Splitter.splitIngr(ingredient.text());
 
                         arrayList.add(new Ingredient(splitStr[0], Float.parseFloat(splitStr[1]), splitStr[2]));
+
                     }
 
 
