@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">WebScraping</string>
-    <?xml version="1.0" encoding="utf-8"?>
-
     <string-array name="measurements">
         <item>cups</item>
         <item>g</item>
@@ -10,6 +8,8 @@
         <item>tsp</item>
         <item>tbsp</item>
         <item>lbs</item>
+        <item>items</item>
     </string-array>
+
 
 </resources>
