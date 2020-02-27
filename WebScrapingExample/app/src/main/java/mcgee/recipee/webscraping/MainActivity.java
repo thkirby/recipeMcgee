@@ -20,6 +20,10 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import mcgee.recipee.webscraping.data.AppDatabase;
+import mcgee.recipee.webscraping.data.Recipe;
+
+
 public class MainActivity extends AppCompatActivity {
 
     private Button getBtn;
@@ -62,10 +66,17 @@ public class MainActivity extends AppCompatActivity {
                 final StringBuilder builder = new StringBuilder();
 
                 try {
+                    String url = "https:/www.allrecipes.com/recipe/255239/hot-chicken-casserole/";
                     Document doc = Jsoup.connect("https:/www.allrecipes.com/recipe/255239/hot-chicken-casserole/").get();
                     String title = doc.title();
                     Elements ingredients = doc.select("li[class=ingredients-item]");
-
+                    final Recipe recipe = new Recipe(ingredients, url);
+                    new Thread() {
+                        @Override
+                        public void run() {
+                            AppDatabase.getAppDatabase(MainActivity.this).recipeDao().insertRecipe(recipe);
+                        }
+                    }.start();
                     builder.append(title).append("\n");
 
                     String[] splitStr;

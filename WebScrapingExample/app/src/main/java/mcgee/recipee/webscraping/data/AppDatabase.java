@@ -5,12 +5,12 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-@Database(entities = {Ingredient.class}, version = 1)
+@Database(entities = {Recipe.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase INSTANCE;
 
-    public abstract IngredientDAO gradeDao();
+    public abstract RecipeDAO recipeDao();
 
     public static AppDatabase getAppDatabase(Context context) {
         if (INSTANCE == null) {
