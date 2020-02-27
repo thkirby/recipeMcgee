@@ -19,6 +19,8 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -62,9 +64,9 @@ public class MainActivity extends AppCompatActivity {
                 final StringBuilder builder = new StringBuilder();
 
                 try {
-                    Document doc = Jsoup.connect("https:/www.allrecipes.com/recipe/255239/hot-chicken-casserole/").get();
+                    Document doc = Jsoup.connect("https://www.allrecipes.com/recipe/10549/best-brownies/").get();
                     String title = doc.title();
-                    Elements ingredients = doc.select("li[class=ingredients-item]");
+                    Elements ingredients = getIngredients(doc);
 
                     builder.append(title).append("\n");
 
@@ -126,6 +128,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private Elements getIngredients(Document doc){
+
+        List<String> queries = Arrays.asList("li[class=ingredients-item]",
+                                             "li[class=recipeIngredient]");
+
+        Elements ingredients = doc.select("li[class=ingredients-item]");
+        for (String query : queries){
+            if (ingredients.isEmpty()){
+                ingredients = doc.select(query);
+            }
+            else{
+                return ingredients;
+            }
+        }
+
+        return ingredients;
     }
 
 
