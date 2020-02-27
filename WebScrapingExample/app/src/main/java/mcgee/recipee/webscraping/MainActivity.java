@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 final StringBuilder builder = new StringBuilder();
 
                 try {
-                    Document doc = Jsoup.connect("https://www.allrecipes.com/recipe/10549/best-brownies/").get();
+                    Document doc = Jsoup.connect("https://www.foodnetwork.com/recipes/ree-drummond/simple-perfect-chili-recipe-2107099").get();
                     String title = doc.title();
                     Elements ingredients = getIngredients(doc);
 
@@ -133,9 +133,9 @@ public class MainActivity extends AppCompatActivity {
     private Elements getIngredients(Document doc){
 
         List<String> queries = Arrays.asList("li[class=ingredients-item]",
-                                             "li[class=recipeIngredient]");
+                                             "li[class=o-Ingredients__a-Ingredient]");
 
-        Elements ingredients = doc.select("li[class=ingredients-item]");
+        Elements ingredients = doc.select("li[class=recipeIngredient]");
         for (String query : queries){
             if (ingredients.isEmpty()){
                 ingredients = doc.select(query);
