@@ -3,7 +3,7 @@ package mcgee.recipee.webscraping;
 import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
-import android.support.design.widget.TextInputEditText;
+import com.google.android.material.textfield.TextInputEditText;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;

@@ -7,7 +7,7 @@
     android:layout_height="fill_parent"
     android:background="#ea8776">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/activity_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -70,7 +70,7 @@
             android:fontFamily="@font/cousine_bold"
             android:inputType="textPersonName"
             android:paddingHorizontal="15px"
-            android:text="somewebsite.com"
+            android:hint="somewebsite.com"
             android:textColor="#b7b7b7"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -103,7 +103,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:drawable/ic_menu_add" />
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>
 

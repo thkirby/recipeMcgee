@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "10701774583",
+    "firebase_url": "https://recipemcgee.firebaseio.com",
+    "project_id": "recipemcgee",
+    "storage_bucket": "recipemcgee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10701774583:android:aea62c98f63858e7bdbdf2",
+        "android_client_info": {
+          "package_name": "mcgee.recipee.webscraping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "10701774583-sil0so5pn437vcirp33h4tl5btqr8udu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mcgee.recipee.webscraping",
+            "certificate_hash": "6e0951ea0e9dc8740eab378de2b28d29b2861f67"
+          }
+        },
+        {
+          "client_id": "10701774583-i789ip869ofakvh575vefqb23aqebi4r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD97NLuMeeQoaMkbKa2wm5KIoILN0qP5EU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "10701774583-i789ip869ofakvh575vefqb23aqebi4r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
