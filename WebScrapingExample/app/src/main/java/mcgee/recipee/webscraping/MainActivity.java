@@ -1,5 +1,6 @@
 package mcgee.recipee.webscraping;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -38,11 +39,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         final ListView list = findViewById(R.id.list_view);
+        Button next = (Button) findViewById(R.id.button2);
+        next.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), Main2Activity.class);
+                startActivityForResult(myIntent, 0);
+            }
+        });
 
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_selectable_list_item, arrayList);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.listitem, arrayList);
         list.setAdapter(arrayAdapter);
     }
+
+
 
     private void getWebsite() {
         new Thread(new Runnable() {

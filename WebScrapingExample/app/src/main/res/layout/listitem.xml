@@ -4,14 +4,15 @@
     android:layout_width="fill_parent"
     android:layout_height="?android:attr/listPreferredItemHeight"
     android:padding="6dip" >
+
     <TextView
         android:id="@+id/name"
         android:layout_width="fill_parent"
         android:layout_height="13dp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:singleLine="true"
+        android:layout_alignParentBottom="true"
         android:maxLines="1"
+        android:singleLine="true"
         android:text="Description"
         android:textSize="12sp" />
     <TextView
