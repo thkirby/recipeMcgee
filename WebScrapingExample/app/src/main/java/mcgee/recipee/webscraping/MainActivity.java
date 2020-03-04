@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         result = findViewById(R.id.result);
         getBtn = findViewById(R.id.getBtn);
-        getBtn.setOnClickListener(view -> getWebsite());
+        getBtn.setOnClickListener(view -> getURL());
         addOne = findViewById(R.id.addIndividualButton);
         addOne.setOnClickListener(view -> addIndividualIngredient());
         final ListView list = findViewById(R.id.list_view);
@@ -47,12 +47,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void getWebsite() {
+    private void getWebsite(String url) {
+        Log.d("getWebsite", "getWebsite: url: " + url);
         new Thread(() -> {
             final StringBuilder builder = new StringBuilder();
 
             try {
-                String url = "https:/www.allrecipes.com/recipe/255239/hot-chicken-casserole/";
                 Document doc = Jsoup.connect(url).get();
                 String title = doc.title();
                 Elements ingredients = doc.select("li[class=ingredients-item]");
@@ -108,6 +108,17 @@ public class MainActivity extends AppCompatActivity {
                 arrayList.add(retIngr);
             }
             arrayAdapter.notifyDataSetChanged();
+        });
+
+    }
+
+    private void getURL(){
+        GetURLDialogue dialogue;
+        dialogue = new GetURLDialogue(this);
+        dialogue.create();
+        dialogue.show();
+        dialogue.setDialogueResult(retStr -> {
+            getWebsite(retStr);
         });
 
     }

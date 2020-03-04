@@ -7,14 +7,16 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/ingrAmount"
-        android:layout_width="255dp"
-        android:layout_height="42dp"
+        android:id="@+id/webAddress"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
         android:ems="10"
         android:hint="https://example.com"
-        android:inputType="number|numberDecimal"
+        android:inputType="textUri"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,28 +25,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:text="Cancel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ingrAmount" />
+        app:layout_constraintTop_toBottomOf="@+id/paste" />
 
     <Button
-        android:id="@+id/cancel"
+        android:id="@+id/enter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
         android:text="Enter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ingrAmount" />
+        app:layout_constraintTop_toBottomOf="@+id/paste" />
 
     <Button
         android:id="@+id/paste"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
         android:text="PASTE"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ingrAmount" />
+        app:layout_constraintEnd_toStartOf="@+id/enter"
+        app:layout_constraintTop_toBottomOf="@+id/webAddress" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
