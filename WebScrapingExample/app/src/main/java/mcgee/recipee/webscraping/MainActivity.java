@@ -18,6 +18,8 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import mcgee.recipee.webscraping.data.AppDatabase;
 import mcgee.recipee.webscraping.data.Recipe;
@@ -55,8 +57,13 @@ public class MainActivity extends AppCompatActivity {
 
             try {
                 Document doc = Jsoup.connect(url).get();
+                /*final int chunkSize = 2048;
+                String s = doc.toString();
+                for (int i = 0; i < s.length(); i += chunkSize) {
+                    Log.d("sdgfsdfsd", s.substring(i, Math.min(s.length(), i + chunkSize)));
+                }*/
                 String title = doc.title();
-                Elements ingredients = doc.select("li[class=ingredients-item]");
+                Elements ingredients = getIngredients(doc);
 
                 builder.append(title).append("\n");
 
@@ -125,6 +132,25 @@ public class MainActivity extends AppCompatActivity {
             getWebsite(retStr);
         });
 
+    }
+
+
+    private Elements getIngredients(Document doc){
+
+        List<String> queries = Arrays.asList("li[class=ingredients-item]",
+                "li[class=o-Ingredients__a-Ingredient]", "li[class=recipeIngredient]");
+
+        Elements ingredients = doc.select("li[class=recipeIngredient]");
+        for (String query : queries){
+            if (ingredients.isEmpty()){
+                ingredients = doc.select(query);
+            }
+            else{
+                return ingredients;
+            }
+        }
+
+        return ingredients;
     }
 
 
