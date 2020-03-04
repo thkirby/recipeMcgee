@@ -176,8 +176,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/mcgee/recipee/webscraping/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="127" column="29" lean-forward="true" selection-start-line="127" selection-start-column="29" selection-end-line="127" selection-end-column="29" />
+            <state relative-caret-position="629">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
         </entry>
@@ -353,10 +353,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1600" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4993481" visible="true" weight="0.34675324" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4993481" visible="true" weight="0.34675324" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" sideWeight="0.5006519" side_tool="true" weight="0.34675324" />
@@ -365,13 +364,13 @@
       <window_info id="Resources Explorer" order="7" weight="0.32987013" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Run" order="0" weight="0.32985657" />
-      <window_info anchor="bottom" id="Logcat" order="1" weight="0.32985657" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="1" visible="true" weight="0.32985657" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32985657" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32985657" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.32985657" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" weight="0.32985657" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.32985657" />
-      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.19556715" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.19556715" />
       <window_info anchor="bottom" id="Android Profiler" order="8" weight="0.32985657" />
       <window_info anchor="bottom" id="Find" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" visible="true" weight="0.32985657" />
@@ -489,8 +488,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mcgee/recipee/webscraping/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="127" column="29" lean-forward="true" selection-start-line="127" selection-start-column="29" selection-end-line="127" selection-end-column="29" />
+        <state relative-caret-position="629">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
