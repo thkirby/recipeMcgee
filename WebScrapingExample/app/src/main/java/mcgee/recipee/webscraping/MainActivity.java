@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -25,7 +26,7 @@ import mcgee.recipee.webscraping.data.Recipe;
 public class MainActivity extends AppCompatActivity {
 
     private Button getBtn;
-    private ImageButton addOne;
+    private Button addOne;
     private TextView result;
     //RelativeLayout rl =new RelativeLayout(this);
     public ArrayList<Ingredient> arrayList = new ArrayList<>();
@@ -116,6 +117,9 @@ public class MainActivity extends AppCompatActivity {
         GetURLDialogue dialogue;
         dialogue = new GetURLDialogue(this);
         dialogue.create();
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialogue.getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
         dialogue.show();
         dialogue.setDialogueResult(retStr -> {
             getWebsite(retStr);

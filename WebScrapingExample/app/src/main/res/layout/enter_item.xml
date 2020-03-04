@@ -5,45 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/ingrName"
-        android:layout_width="0dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/inputTextName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ingredient Name" />
-    </android.support.design.widget.TextInputLayout>
-
     <EditText
         android:id="@+id/ingrAmount"
-        android:layout_width="214dp"
+        android:layout_width="186dp"
         android:layout_height="52dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="18dp"
         android:ems="10"
         android:hint="Amount"
         android:inputType="number|numberDecimal"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/ingrName"
         app:layout_constraintTop_toBottomOf="@+id/ingrName" />
 
     <Spinner
         android:id="@+id/ingrType"
-        android:layout_width="145dp"
+        android:layout_width="0dp"
         android:layout_height="52dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
         android:entries="@array/measurements"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ingrName"
+        app:layout_constraintStart_toEndOf="@+id/ingrAmount"
         app:layout_constraintTop_toBottomOf="@+id/ingrName" />
 
     <Button
@@ -51,19 +32,30 @@
         android:layout_width="100dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
         android:text="ENTER"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ingrType"
         app:layout_constraintTop_toBottomOf="@+id/ingrType" />
 
     <Button
         android:id="@+id/cancel"
         android:layout_width="100dp"
         android:layout_height="48dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         android:text="CANCEL"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/ingrAmount"
         app:layout_constraintTop_toBottomOf="@+id/ingrAmount" />
+
+    <EditText
+        android:id="@+id/ingrName"
+        android:layout_width="330dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

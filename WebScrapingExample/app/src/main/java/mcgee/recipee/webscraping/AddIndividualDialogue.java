@@ -17,8 +17,7 @@ public class AddIndividualDialogue extends Dialog implements
 public Activity c;
 public Dialog d;
 public Button enter, cancel;
-public TextInputEditText ingrName;
-public EditText ingrAmount;
+public EditText ingrAmount, ingrName;
 public Spinner ingrType;
 OnAddItemResult mOnAddItemResult;
 
@@ -34,7 +33,7 @@ protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.enter_item);
         enter = findViewById(R.id.enter);
         cancel = findViewById(R.id.cancel);
-        ingrName = findViewById(R.id.inputTextName);
+        ingrName = findViewById(R.id.ingrName);
         ingrAmount = findViewById(R.id.ingrAmount);
         ingrType = findViewById(R.id.ingrType);
 

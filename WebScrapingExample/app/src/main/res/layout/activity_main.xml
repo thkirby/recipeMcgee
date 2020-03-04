@@ -60,19 +60,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/editText9"
-            android:layout_width="155dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="126dp"
+
+        <Button
+            android:id="@+id/addIndividualButton"
+            android:layout_width="165dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="128dp"
             android:background="@drawable/my_button_bg2"
-            android:ems="10"
             android:fontFamily="@font/cousine_bold"
-            android:inputType="textPersonName"
-            android:paddingHorizontal="15px"
-            android:hint="somewebsite.com"
-            android:textColor="#b7b7b7"
-            android:textSize="15sp"
+            android:paddingHorizontal="15dp"
+            android:text="Add Single Item"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -80,34 +78,20 @@
         <ListView
             android:id="@+id/list_view"
             style="@android:style/Widget.Material.ListView.DropDown"
-            android:layout_width="0dp"
+            android:layout_width="394dp"
             android:layout_height="0dp"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="5dp"
-            android:layout_marginBottom="64dp"
+            android:layout_marginBottom="32dp"
             android:background="#9EFFFFFF"
             android:divider="@android:drawable/divider_horizontal_bright"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/getBtn">
+            app:layout_constraintTop_toBottomOf="@+id/result">
 
         </ListView>
-
-        <ImageButton
-            android:id="@+id/addIndividualButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="71dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="97dp"
-            app:layout_constraintBottom_toTopOf="@+id/list_view"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/getBtn"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/ic_menu_add" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
