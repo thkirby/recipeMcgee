@@ -18,8 +18,6 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import mcgee.recipee.webscraping.data.AppDatabase;
 import mcgee.recipee.webscraping.data.Recipe;
@@ -34,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     public ArrayList<Ingredient> arrayList = new ArrayList<>();
     CustomAdapter arrayAdapter;
     AddIndividualDialogue addIndividualDialogue;
-    private String currURL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 Document doc = Jsoup.connect(url).get();
                 String title = doc.title();
-                Elements ingredients = getIngredients(doc);
+                Elements ingredients = doc.select("li[class=ingredients-item]");
 
                 builder.append(title).append("\n");
 
@@ -125,29 +122,9 @@ public class MainActivity extends AppCompatActivity {
         lp.width = WindowManager.LayoutParams.MATCH_PARENT;
         dialogue.show();
         dialogue.setDialogueResult(retStr -> {
-            currURL = retStr;
+            getWebsite(retStr);
         });
-        getWebsite(currURL);
 
-    }
-
-
-    private Elements getIngredients(Document doc){
-
-        List<String> queries = Arrays.asList("li[class=ingredients-item]",
-                "li[class=o-Ingredients__a-Ingredient]");
-
-        Elements ingredients = doc.select("li[class=recipeIngredient]");
-        for (String query : queries){
-            if (ingredients.isEmpty()){
-                ingredients = doc.select(query);
-            }
-            else{
-                return ingredients;
-            }
-        }
-
-        return ingredients;
     }
 
 
