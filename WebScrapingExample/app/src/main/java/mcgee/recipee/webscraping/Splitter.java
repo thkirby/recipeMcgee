@@ -355,5 +355,5 @@ class Splitter {
 
         return ret;
     }
-    
+
 }
