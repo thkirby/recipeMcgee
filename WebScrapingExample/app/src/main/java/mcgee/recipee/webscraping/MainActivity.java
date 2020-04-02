@@ -11,12 +11,16 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.ListView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -64,7 +68,9 @@ public class MainActivity extends AppCompatActivity {
                 }*/
                 String title = doc.title();
                 Elements ingredients = getIngredients(doc);
-
+                for (Element ingr : ingredients){
+                    Log.d("sdgfsdfsd", ingr.toString());
+                }
                 builder.append(title).append("\n");
 
                 String[] splitStr;
@@ -79,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         }
                     }
-                    if (!repeatedIngr) {
+                    if (!repeatedIngr && splitStr[1] != "") {
                         arrayList.add(new Ingredient(splitStr[0], Float.parseFloat(splitStr[1]), splitStr[2]));
                     }
 
@@ -137,10 +143,33 @@ public class MainActivity extends AppCompatActivity {
 
     private Elements getIngredients(Document doc){
 
-        List<String> queries = Arrays.asList("li[class=ingredients-item]",
+        List<String> queries = Arrays.asList("li[class=ingredients-item-name]","li[class=ingredients-item]",
                 "li[class=o-Ingredients__a-Ingredient]", "li[class=recipeIngredient]");
 
-        Elements ingredients = doc.select("li[class=recipeIngredient]");
+        Elements ingredients = doc.select("[type='application/ld+json']");
+        try {
+            Elements ret_elements = new Elements();
+            JSONObject reader = new JSONObject(Splitter.onlyCurlyBracket(ingredients.toString()));
+            JSONArray listElement = reader.getJSONArray("@graph");
+
+            JSONArray ingrs = new JSONArray();
+            for (int i=0; i < listElement.length(); i++){
+                Log.d("sdfdsf", " " + listElement.getJSONObject(i).toString());
+                if (listElement.getJSONObject(i).getString("@type").equals("Recipe")){
+                    ingrs = listElement.getJSONObject(i).getJSONArray("recipeIngredient");
+                    for (int j=0; j<ingrs.length(); j++){
+                        Element toAdd = new Element(ingrs.getString(j));
+                        ret_elements.add(toAdd);
+                    }
+                    return ret_elements;
+                }
+            }
+        } catch (JSONException e) {
+            Log.d("dsgsdgfsd", "shit is fucked, yo");
+            e.printStackTrace();
+        }
+
+        ingredients = new Elements();
         for (String query : queries){
             if (ingredients.isEmpty()){
                 ingredients = doc.select(query);
