@@ -67,25 +67,26 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("sdgfsdfsd", s.substring(i, Math.min(s.length(), i + chunkSize)));
                 }*/
                 String title = doc.title();
-                Elements ingredients = getIngredients(doc);
-                for (Element ingr : ingredients){
-                    Log.d("sdgfsdfsd", ingr.toString());
-                }
+                List<String> ingredients = Parser.findVar(doc.toString());
                 builder.append(title).append("\n");
 
                 String[] splitStr;
-                for (Element ingredient : ingredients) {
-                    splitStr = Splitter.splitIngr(ingredient.text());
+                for (String ingredient : ingredients) {
+                    Log.d("abrgndscx", "Testing an Ingredient: " + ingredient);
+                    splitStr = Splitter.splitIngr(ingredient);
                     splitStr[0] = splitStr[0].trim().replace("[\n\r]", "");
+                    Log.d("dfdssdf", splitStr[0] +" , "+splitStr[1] +" , " + splitStr[2]);
                     boolean repeatedIngr = false;
                     for (Ingredient ingr : arrayList){
                         if (splitStr[0].equals(ingr.getName())){
+                            Log.d("abrgndscx", "Found a match for " + ingredient);
                             ingr.setQuantity(ingr.getQuantity() + Float.parseFloat(splitStr[1]));
                             repeatedIngr = true;
                             break;
                         }
                     }
-                    if (!repeatedIngr && splitStr[1] != "") {
+                    if (!repeatedIngr && !splitStr[1].equals("")) {
+                        Log.d("abrgndscx", "Adding: " + ingredient);
                         arrayList.add(new Ingredient(splitStr[0], Float.parseFloat(splitStr[1]), splitStr[2]));
                     }
 

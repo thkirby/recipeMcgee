@@ -55,8 +55,7 @@ class Splitter {
                     }
                     else{
                         if (addF != 0){
-                            //str = str + addF + " " + numerator + curr;
-                            str = str + numerator + curr;
+                            str = str + addF + " " + numerator + curr;
                         }
                         else{
                             str = str + numerator + curr;
@@ -328,7 +327,8 @@ class Splitter {
         parts = str.split(" ");
 
         boolean enteredNum = false;
-        String mVal = "", mType = "";
+        String mVal = "1", mType = "";
+        Log.d("Should be a number: ", parts[0]);
         for (int i = 0; i < parts.length; i++){
             if (isNumeric(parts[i])){
                 mVal = parts[i];

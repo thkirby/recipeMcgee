@@ -1,13 +1,16 @@
 package mcgee.recipee.webscraping;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Parser {
     public static List<String> findVar(String doc){
-        List<String> queries = Arrays.asList("dsfgsdgfsdf", "recipeIngredient", "ingredients-item-name","ingredients-item",
-                "o-Ingredients__a-Ingredient"); //TODO: remove the nonsense word at 0, that's just for testing.
+
+        List<String> queries = Arrays.asList("recipeIngredient", "ingredients-item-name","ingredients-item",
+                "o-Ingredients__a-Ingredient");
         ArrayList<String> ret = new ArrayList<>();
         int query_loc = -1;
         outer: for(String query : queries){
@@ -15,13 +18,15 @@ public class Parser {
             for (int i = 0; i < doc.length()-len - 1; i++) {
                 if (doc.substring(i, i + len).equals(query)) { // query has been found
                     query_loc = i + len;
+
                     break outer;
                 }
             }
         }
 
         if (query_loc == -1){
-            return null;
+            Log.d("lkasdhnsax", "Didn't find a keyword.");
+            return ret;
         }
 
         else{
