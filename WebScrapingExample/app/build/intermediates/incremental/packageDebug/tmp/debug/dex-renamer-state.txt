@@ -1,7 +1,7 @@
-#Wed Mar 04 02:07:43 CST 2020
-base.0=D\:\\Documents\\GitHub\\recipeMcgee\\WebScrapingExample\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+#Thu Apr 02 15:57:20 EDT 2020
+base.0=/Users/student/Documents/GitHub/recipeMcgee/WebScrapingExample/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=D\:\\Documents\\GitHub\\recipeMcgee\\WebScrapingExample\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.1=/Users/student/Documents/GitHub/recipeMcgee/WebScrapingExample/app/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex
