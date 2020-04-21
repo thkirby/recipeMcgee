@@ -61,11 +61,6 @@ public class MainActivity extends AppCompatActivity {
 
             try {
                 Document doc = Jsoup.connect(url).get();
-                /*final int chunkSize = 2048;
-                String s = doc.toString();
-                for (int i = 0; i < s.length(); i += chunkSize) {
-                    Log.d("sdgfsdfsd", s.substring(i, Math.min(s.length(), i + chunkSize)));
-                }*/
                 String title = doc.title();
                 List<String> ingredients = Parser.findVar(doc.toString());
                 builder.append(title).append("\n");
@@ -74,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
                 for (String ingredient : ingredients) {
                     Log.d("abrgndscx", "Testing an Ingredient: " + ingredient);
                     splitStr = Splitter.splitIngr(ingredient);
-                    splitStr[0] = splitStr[0].trim().replace("[\n\r]", "");
                     Log.d("dfdssdf", splitStr[0] +" , "+splitStr[1] +" , " + splitStr[2]);
                     boolean repeatedIngr = false;
                     for (Ingredient ingr : arrayList){

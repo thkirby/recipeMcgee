@@ -31,7 +31,9 @@ class Splitter {
 
         float addF = 0;
         for (int i = 0; i < oldstr.length(); i++){
+
             char curr = oldstr.charAt(i);
+            Log.d("sdfsfas", "string='"+str+"' curr='"+curr+"'");
             if (checking){
                 if (Character.isDigit(curr)){
                     if (!denom){
@@ -44,17 +46,17 @@ class Splitter {
                 else if (curr == '/' || curr == '\\'){
                     denom = true;
                 }
-                else if ((curr == '-' || curr == ' ') && !"".equals(numerator) && !denom){ //for things like 1-1/2
+                else if ((curr == '-' || curr == ' ' || curr == ' ') && !"".equals(numerator) && !denom){ //for things like 1-1/2
                     addF = Float.parseFloat(numerator);
                     numerator = "";
                 }
                 else{
                     if (denom == true && !"".equals(denominator) && !"".equals(numerator)){
                         String toAdd = Float.toString(addF + ((Float.parseFloat(numerator))/(Float.parseFloat(denominator))));
-                        str = str + " " + toAdd + curr;
+                        str = str + " " + toAdd + " " + curr;
                     }
                     else{
-                        if (addF != 0){
+                        if (addF != 0 && false){
                             str = str + addF + " " + numerator + curr;
                         }
                         else{
@@ -299,7 +301,7 @@ class Splitter {
         return str;
     }
 
-    // Returns an array of two strings, one for the ingredient and one for the quantity
+    // Returns an array of three strings, one for the name, one for the quantity, and one for the unit of measurement.
     public static String[] splitIngr(String str){
         String[] ret = new String[3];
         ret[0] = ""; //name of the ingredient
@@ -311,7 +313,7 @@ class Splitter {
                 "serving", "and", "drained", "rinsed",
                 "chopped", "can", "cans", "one", "at",
                 "softened", "room", "temperature", "to", "a",
-                "an", "cooked", "grated");
+                "an", "cooked", "grated", "beaten");
         List<String> measurements = Arrays.asList("cup", "cups", "g", "mg",
                 "grams", "gram", "oz",
                 "ounces", "ounce", "pounds",
@@ -352,6 +354,7 @@ class Splitter {
         else {
             ret[2] = mType;
         }
+        ret[0] = ret[0].trim().replace("[\n\r]", "");
 
         return ret;
     }

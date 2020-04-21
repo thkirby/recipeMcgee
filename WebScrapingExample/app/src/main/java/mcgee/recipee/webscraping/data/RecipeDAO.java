@@ -10,7 +10,6 @@ import java.util.List;
 
 @Dao
 public interface RecipeDAO {
-
     @Insert
     void insertRecipe(Recipe recipe);
 
