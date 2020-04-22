@@ -3,7 +3,7 @@ import android.util.Log;
 
 import java.util.*;
 
-class Splitter {
+public class Splitter {
 
 
     // Checks if a string is numeric, returns a boolean
@@ -357,6 +357,65 @@ class Splitter {
         ret[0] = ret[0].trim().replace("[\n\r]", "");
 
         return ret;
+    }
+
+    // Returns just a string for the name.
+    // The exact same as the above, just doesn't return measurements and quantity.
+    public static String getNameOnly(String str){
+        String[] ret = new String[3];
+        ret[0] = ""; //name of the ingredient
+        ret[1] = ""; //how many of the ingredient
+        ret[2] = ""; //unit of measurement
+        String[] parts;
+
+        List<String> remove = Arrays.asList("of", "diced", "crushed", "", "for",
+                "serving", "and", "drained", "rinsed",
+                "chopped", "can", "cans", "one", "at",
+                "softened", "room", "temperature", "to", "a",
+                "an", "cooked", "grated", "beaten");
+        List<String> measurements = Arrays.asList("cup", "cups", "g", "mg",
+                "grams", "gram", "oz",
+                "ounces", "ounce", "pounds",
+                "teaspoon", "teaspoons", "tablespoon",
+                "tablespoons", "tsp", "tbsp");
+
+        str = str.replaceAll("[,:]", "").toLowerCase();
+        str = noCarrots(str);
+        str = fracChar(str);
+        str = fracToDec(spaceGrams(str));
+        str = writtenNums(str, measurements);
+        str = str.replaceAll("[-()]", " ");
+        parts = str.split(" ");
+
+        boolean enteredNum = false;
+        String mVal = "1", mType = "";
+        Log.d("Should be a number: ", parts[0]);
+        for (int i = 0; i < parts.length; i++){
+            if (isNumeric(parts[i])){
+                mVal = parts[i];
+                enteredNum = true;
+            }
+            else if (measurements.contains(parts[i])){
+                mType = parts[i];
+            }
+            else if (remove.contains(parts[i])){
+                ; //do nothing
+            }
+            else {
+                ret[0] = ret[0] + parts[i] + " ";
+            }
+
+        }
+        ret[1] = mVal;
+        if (mType.equals("")){
+            ret[2] = "units";
+        }
+        else {
+            ret[2] = mType;
+        }
+        ret[0] = ret[0].trim().replace("[\n\r]", "");
+
+        return ret[0];
     }
 
 }
