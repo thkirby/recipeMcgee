@@ -1430,6 +1430,7 @@ id CTRL
 id FUNCTION
 id META
 id NavList
+id Recipetitle
 id SHIFT
 id SYM
 id ScrollView01
@@ -1579,6 +1580,7 @@ id icon_group
 id icon_only
 id ifRoom
 id image
+id imageView
 id info
 id ingrAmount
 id ingrName
@@ -1739,6 +1741,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id urlList
 id useLogo
 id view_offset_helper
 id visible
@@ -1826,6 +1829,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout display_urls
 layout enter_item
 layout enter_url
 layout listitem
@@ -1879,6 +1883,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+layout urldisplay
 menu navigation_menu
 mipmap ic_launcher
 mipmap ic_launcher_round

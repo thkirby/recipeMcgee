@@ -1,16 +1,14 @@
 package mcgee.recipee.webscraping;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.util.Log;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,13 +19,9 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import mcgee.recipee.webscraping.data.AppDatabase;
-import mcgee.recipee.webscraping.data.Recipe;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -37,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView result;
     private ListView mDrawerList;
     private ArrayAdapter<String> mAdapter;
+    private ArrayList<RecipeURL> savedRecipes;
+    private ArrayList<RecipeURL> suggestedRecipes;
     //RelativeLayout rl =new RelativeLayout(this);
     public ArrayList<Ingredient> arrayList = new ArrayList<>();
     CustomAdapter arrayAdapter;
@@ -61,10 +57,32 @@ public class MainActivity extends AppCompatActivity {
 
     private void addDrawerItems() {
         String[] osArray = { "My Shopping List                                           ",
-                             "Find a Recipe                                              ",
+                             "My Current Recipes                                         ",
+                             "",
+                             "Add New Ingredient                                         ",
+                             "Add New Recipe                                             ",
+                             "",
+                             "Suggested Recipes                                          ",
                              "My Saved Shopping Lists                                    "};
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
         mDrawerList.setAdapter(mAdapter);
+    }
+
+    private void setLayoutMain(){
+        setContentView(R.layout.activity_main);
+        result = findViewById(R.id.result);
+        getBtn = findViewById(R.id.getBtn);
+        getBtn.setOnClickListener(view -> getURL());
+        addOne = findViewById(R.id.addIndividualButton);
+        addOne.setOnClickListener(view -> addIndividualIngredient());
+        final ListView list = findViewById(R.id.list_view);
+        list.setAdapter(arrayAdapter);
+        mDrawerList = (ListView)findViewById(R.id.NavList);
+        addDrawerItems();
+    }
+
+    private void setLayoutRecipes(){
+        setContentView(R.layout.urldisplay);
     }
 
     private void getWebsite(String url) {
@@ -131,6 +149,9 @@ public class MainActivity extends AppCompatActivity {
             }
             arrayAdapter.notifyDataSetChanged();
         });
+        setContentView(R.layout.urldisplay);
+        setLayoutMain();
+
 
     }
 
