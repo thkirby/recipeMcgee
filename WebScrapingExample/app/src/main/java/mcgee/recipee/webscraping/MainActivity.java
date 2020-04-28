@@ -2,7 +2,9 @@ package mcgee.recipee.webscraping;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -23,16 +25,21 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import mcgee.recipee.webscraping.data.GetSimilar;
 
-public class MainActivity extends AppCompatActivity {
+
+public class MainActivity extends AppCompatActivity{
 
     private Button getBtn;
     private Button addOne;
     private TextView result;
-    private ListView mDrawerList;
+    private ListView mDrawerList, suggestedRList, currentRList;
     private ArrayAdapter<String> mAdapter;
-    private ArrayList<RecipeURL> savedRecipes;
-    private ArrayList<RecipeURL> suggestedRecipes;
+    private ArrayAdapter<String> mAdapter2;
+    private ArrayList<String> savedRecipes;
+    private List<String> suggestedRecipes;
+
+    private GetSimilar suggestRecipes;
     //RelativeLayout rl =new RelativeLayout(this);
     public ArrayList<Ingredient> arrayList = new ArrayList<>();
     CustomAdapter arrayAdapter;
@@ -42,16 +49,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        arrayAdapter = new CustomAdapter(arrayList, this);
         result = findViewById(R.id.result);
         getBtn = findViewById(R.id.getBtn);
         getBtn.setOnClickListener(view -> getURL());
         addOne = findViewById(R.id.addIndividualButton);
         addOne.setOnClickListener(view -> addIndividualIngredient());
-        final ListView list = findViewById(R.id.list_view);
-        arrayAdapter = new CustomAdapter(arrayList, this);
+
+        final ListView list = findViewById(R.id.list_view); //This might need to be moved into setNavDrawer
         list.setAdapter(arrayAdapter);
-        mDrawerList = (ListView)findViewById(R.id.NavList);
-        addDrawerItems();
+        setNavDrawer();
+
+        suggestRecipes = new GetSimilar();
 
     }
 
@@ -68,6 +77,26 @@ public class MainActivity extends AppCompatActivity {
         mDrawerList.setAdapter(mAdapter);
     }
 
+    private void setNavDrawer(){
+
+        mDrawerList = (ListView)findViewById(R.id.NavList);
+        addDrawerItems();
+        mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch(i){
+                    case 0:
+                        setLayoutMain();
+                        break;
+                    case 3:
+                        addIndividualIngredient();
+                        break;
+                }
+            }
+        });
+    }
+
+
     private void setLayoutMain(){
         setContentView(R.layout.activity_main);
         result = findViewById(R.id.result);
@@ -77,13 +106,27 @@ public class MainActivity extends AppCompatActivity {
         addOne.setOnClickListener(view -> addIndividualIngredient());
         final ListView list = findViewById(R.id.list_view);
         list.setAdapter(arrayAdapter);
-        mDrawerList = (ListView)findViewById(R.id.NavList);
-        addDrawerItems();
+        setNavDrawer();
+
+    }
+
+    private void setLayoutSuggested(){
+        setContentView(R.layout.display_urls);
+        List<String> temp = new ArrayList<>();
+        for (Ingredient ingredient : arrayList){
+            temp.add(ingredient.getName());
+        }
+        suggestedRecipes = suggestRecipes.GetLinks(temp);
+        mAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, suggestedRecipes);
+        suggestedRList = findViewById(R.id.urlList);
+        setNavDrawer();
+
     }
 
     private void setLayoutRecipes(){
-        setContentView(R.layout.urldisplay);
+
     }
+
 
     private void getWebsite(String url) {
         Log.d("getWebsite", "getWebsite: url: " + url);
@@ -149,8 +192,6 @@ public class MainActivity extends AppCompatActivity {
             }
             arrayAdapter.notifyDataSetChanged();
         });
-        setContentView(R.layout.urldisplay);
-        setLayoutMain();
 
 
     }

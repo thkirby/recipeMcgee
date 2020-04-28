@@ -43,7 +43,7 @@ public class GetSimilar {
     }
 
     // constructor, makes sites have actual recipes in it. In an ideal world, this would sync up to a database
-    GetSimilar(){
+    public GetSimilar(){
         sites = Arrays.asList("https://www.allrecipes.com/recipe/9870/easy-sugar-cookies/", "https://www.allrecipes.com/recipe/16354/easy-meatloaf/");
     }
 
@@ -64,7 +64,7 @@ public class GetSimilar {
 
     }
 
-    List<String> GetLinks(List<String> ingredients){
+    public List<String> GetLinks(List<String> ingredients){
         Comparator<stringInt> comparator = new stringIntComparator();
         PriorityQueue<stringInt> temp = new PriorityQueue<>(sites.size(), comparator);
         for (String site : sites){
