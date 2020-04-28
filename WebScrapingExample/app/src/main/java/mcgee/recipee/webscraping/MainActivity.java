@@ -60,7 +60,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addDrawerItems() {
-        String[] osArray = { "My Shopping List", "Find a Recipe", "My Saved Shopping Lists"};
+        String[] osArray = { "My Shopping List                                           ",
+                             "Find a Recipe                                              ",
+                             "My Saved Shopping Lists                                    "};
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
         mDrawerList.setAdapter(mAdapter);
     }
