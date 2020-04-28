@@ -1490,7 +1490,6 @@ id actions
 id activity_chooser_view_content
 id activity_main
 id add
-id addIndividualButton
 id adjust_height
 id adjust_width
 id alertTitle
@@ -1566,7 +1565,6 @@ id filter_chip
 id fitToContents
 id fixed
 id forever
-id getBtn
 id ghost_view
 id ghost_view_holder
 id gone
@@ -1580,7 +1578,6 @@ id icon_group
 id icon_only
 id ifRoom
 id image
-id imageView
 id info
 id ingrAmount
 id ingrName
@@ -1654,7 +1651,6 @@ id progress_circular
 id progress_horizontal
 id quantity
 id radio
-id result
 id right
 id right_icon
 id right_side

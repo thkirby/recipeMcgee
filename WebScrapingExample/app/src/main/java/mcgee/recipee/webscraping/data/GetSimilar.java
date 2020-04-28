@@ -44,7 +44,14 @@ public class GetSimilar {
 
     // constructor, makes sites have actual recipes in it. In an ideal world, this would sync up to a database
     public GetSimilar(){
-        sites = Arrays.asList("https://www.allrecipes.com/recipe/9870/easy-sugar-cookies/", "https://www.allrecipes.com/recipe/16354/easy-meatloaf/");
+        sites = Arrays.asList("https://www.allrecipes.com/recipe/9870/easy-sugar-cookies/", "https://www.allrecipes.com/recipe/16354/easy-meatloaf/",
+                "https://www.allrecipes.com/recipe/20144/banana-banana-bread/",
+                "https://joyfoodsunshine.com/the-most-amazing-chocolate-chip-cookies/",
+                "https://www.allrecipes.com/recipe/10549/best-brownies/",
+                "https://www.allrecipes.com/recipe/40399/the-best-meatballs/",
+                "https://www.allrecipes.com/recipe/213742/meatball-nirvana/",
+                "https://www.allrecipes.com/recipe/25112/zucchini-brownies/?internalSource=hub%20recipe&referringContentType=Search",
+                "https://cafedelites.com/best-fudgy-cocoa-brownies/");
     }
 
     private List<String> GetIngredients(String url){
@@ -70,17 +77,18 @@ public class GetSimilar {
         for (String site : sites){
             int numCommon = 0; //The number of ingredients a recipe has in common
             for (String ingredient : GetIngredients(site)){
-                if (ingredient.contains(ingredient)){
+                if (ingredients.contains(ingredient)){
                     numCommon = numCommon + 1;
                 }
-                temp.add(new stringInt(numCommon, site));
+
             }
+            temp.add(new stringInt(numCommon, site));
 
 
         }
 
         List<String> ret = new ArrayList<>();
-        while (!temp.isEmpty()){
+        for (int x =0; x < sites.size(); x++){
             ret.add(temp.remove().s);
         }
 
