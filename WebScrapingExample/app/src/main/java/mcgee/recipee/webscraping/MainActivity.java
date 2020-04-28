@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     private Button getBtn;
     private Button addOne;
     private TextView result;
+    private ListView mDrawerList;
+    private ArrayAdapter<String> mAdapter;
     //RelativeLayout rl =new RelativeLayout(this);
     public ArrayList<Ingredient> arrayList = new ArrayList<>();
     CustomAdapter arrayAdapter;
@@ -51,7 +54,15 @@ public class MainActivity extends AppCompatActivity {
         final ListView list = findViewById(R.id.list_view);
         arrayAdapter = new CustomAdapter(arrayList, this);
         list.setAdapter(arrayAdapter);
+        mDrawerList = (ListView)findViewById(R.id.NavList);
+        addDrawerItems();
 
+    }
+
+    private void addDrawerItems() {
+        String[] osArray = { "My Shopping List", "Find a Recipe", "My Saved Shopping Lists"};
+        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
+        mDrawerList.setAdapter(mAdapter);
     }
 
     private void getWebsite(String url) {

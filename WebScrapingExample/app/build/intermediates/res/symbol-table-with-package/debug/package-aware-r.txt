@@ -1429,6 +1429,7 @@ id BOTTOM_START
 id CTRL
 id FUNCTION
 id META
+id NavList
 id SHIFT
 id SYM
 id ScrollView01
@@ -1503,7 +1504,7 @@ id bottom
 id box
 id btnLogin
 id btnRegister
-id button
+id button2
 id buttonPanel
 id cancel
 id cancel_button
@@ -1543,6 +1544,7 @@ id dialog_button
 id dimensions
 id direct
 id disableHome
+id drawer_layout
 id dropdown_menu
 id edit_query
 id end
