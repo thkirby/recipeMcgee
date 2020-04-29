@@ -42,21 +42,21 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:context="mcgee.recipee.webscraping.MainActivity">
 
-        <Button
-            android:id="@+id/getBtn"
-            android:layout_width="248dp"
-            android:layout_height="46dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="72dp"
-            android:background="@drawable/my_button_bg2"
-            android:fontFamily="@font/cousine_bold"
-            android:paddingHorizontal="15dp"
-            android:text="My Shopping List"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/getBtn"
+        android:layout_width="248dp"
+        android:layout_height="46dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/my_button_bg2"
+        android:fontFamily="@font/cousine_bold"
+        android:paddingHorizontal="15dp"
+        android:text="My Saved Shopping Lists"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
     <!-- Side navigation drawer UI -->
     <ListView

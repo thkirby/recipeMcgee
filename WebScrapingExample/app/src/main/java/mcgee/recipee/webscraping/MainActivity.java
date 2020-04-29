@@ -18,6 +18,7 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import android.widget.AdapterView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,11 +26,16 @@ public class MainActivity extends AppCompatActivity {
     private TextView result;
     //RelativeLayout rl =new RelativeLayout(this);
     public ArrayList<String> arrayList = new ArrayList<>();
+    private ListView mDrawerList;
+    private ArrayAdapter<String> mAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mDrawerList = (ListView)findViewById(R.id.navList);
+        addDrawerItems();
         result = findViewById(R.id.result);
         getBtn = findViewById(R.id.getBtn);
         getBtn.setOnClickListener(new View.OnClickListener() {
@@ -50,9 +56,31 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.listitem, arrayList);
         list.setAdapter(arrayAdapter);
+
     }
 
-
+    private void addDrawerItems() {
+        String[] osArray = { "My Shopping List", "Find a Recipe", "My Saved Shopping Lists"};
+        mAdapter = new ArrayAdapter<String>(this, R.layout.navlist, osArray);
+        mDrawerList.setAdapter(mAdapter);
+        mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position==0) {
+                    Intent myIntent = new Intent(view.getContext(), MainActivity.class);
+                    startActivityForResult(myIntent, 0);
+                }
+                else if (position==1) {
+                    Intent myIntent = new Intent(view.getContext(), Main2Activity.class);
+                    startActivityForResult(myIntent, 0);
+                }
+                else if (position==2) {
+                    Intent myIntent = new Intent(view.getContext(), Main3Activity.class);
+                    startActivityForResult(myIntent, 0);
+                }
+            }
+        });
+    }
 
     private void getWebsite() {
         new Thread(new Runnable() {
