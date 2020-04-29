@@ -70,11 +70,15 @@ class Splitter {
                     checking = false;
                 }
             }
-            else{
-                if(Character.isDigit(curr)){
+            else {
+                if (Character.isDigit(curr)) {
                     numerator = numerator + curr;
                     checking = true;
                 }
+                if (Character.isDigit(curr) == false) {
+                    str = str + curr;
+                }
+            }
                 else{
                     str = str + curr;
                 }
