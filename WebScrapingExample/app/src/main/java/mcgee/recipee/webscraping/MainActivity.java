@@ -1,15 +1,22 @@
 package mcgee.recipee.webscraping;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.os.StrictMode;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,39 +27,159 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import mcgee.recipee.webscraping.data.AppDatabase;
-import mcgee.recipee.webscraping.data.Recipe;
+import mcgee.recipee.webscraping.data.GetSimilar;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     private Button getBtn;
     private Button addOne;
     private TextView result;
+    private ListView mDrawerList, suggestedRList, savedRList;
+    private ArrayAdapter<String> mAdapter;
+    private ArrayAdapter<String> mAdapter2;
+    private ArrayList<String> savedRecipes;
+    private List<String> suggestedRecipes;
+
+    private GetSimilar suggestRecipes;
     //RelativeLayout rl =new RelativeLayout(this);
     public ArrayList<Ingredient> arrayList = new ArrayList<>();
     CustomAdapter arrayAdapter;
     AddIndividualDialogue addIndividualDialogue;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("me", "my");
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        result = findViewById(R.id.result);
-        getBtn = findViewById(R.id.getBtn);
-        getBtn.setOnClickListener(view -> getURL());
-        addOne = findViewById(R.id.addIndividualButton);
-        addOne.setOnClickListener(view -> addIndividualIngredient());
-        final ListView list = findViewById(R.id.list_view);
         arrayAdapter = new CustomAdapter(arrayList, this);
+
+
+        final ListView list = findViewById(R.id.list_view); //This might need to be moved into setNavDrawer
         list.setAdapter(arrayAdapter);
+        setNavDrawer();
+
+        suggestRecipes = new GetSimilar();
+        savedRecipes = new ArrayList<String>();
+    }
+
+
+    private void addDrawerItems() {
+        mDrawerList = (ListView)findViewById(R.id.NavList);
+        String[] osArray = { "My Shopping List                                           ",
+                             "My Current Recipes                                         ",
+                             "                                  ",
+                             "Add New Ingredient                                         ",
+                             "Add New Recipe                                             ",
+                             "                                  ",
+                             "Suggested Recipes                                          ",
+                             "My Saved Shopping Lists                                    "};
+        mAdapter = new ArrayAdapter<String>(this, R.layout.navlist, osArray);
+        mDrawerList.setAdapter(mAdapter);
+    }
+
+    private void setNavDrawer(){
+
+
+        addDrawerItems();
+        mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch(i){
+                    case 0:
+                        setLayoutMain();
+                        break;
+                    case 1:
+                        setLayoutRecipes();
+                        break;
+                    case 3:
+                        addIndividualIngredient();
+                        break;
+                    case 4:
+                        getURL();
+                        break;
+                    case 6:
+                        setLayoutSuggested();
+                        break;
+                }
+            }
+        });
+    }
+
+
+    private void setLayoutMain(){
+        setContentView(R.layout.activity_main);
+        final ListView list = findViewById(R.id.list_view);
+        list.setAdapter(arrayAdapter);
+        setNavDrawer();
 
     }
+
+    private void setLayoutSuggested(){
+        setContentView(R.layout.display_urls);
+        List<String> temp = new ArrayList<>();
+        for (Ingredient ingredient : arrayList){
+            temp.add(ingredient.getName());
+        }
+        suggestedRecipes = suggestRecipes.GetLinks(temp);
+        List<String> suggestedRecipesNames = new ArrayList<>();
+        for (String url:suggestedRecipes){
+            try {
+                Document doc = Jsoup.connect(url).get();
+                suggestedRecipesNames.add(doc.title());}
+            catch (IOException e) {
+                ;
+            }
+        } // Add titles instead of Links
+        mAdapter2 = new ArrayAdapter<String>(this, R.layout.urldisplay, suggestedRecipesNames);
+        suggestedRList = findViewById(R.id.urlList);
+        suggestedRList.setAdapter(mAdapter2);
+        setNavDrawer();
+        suggestedRList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Uri uri = Uri.parse(suggestedRecipes.get(i));
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+
+    }
+
+    private void setLayoutRecipes(){
+        setContentView(R.layout.display_urls);
+        List<String> temp = new ArrayList<>();
+
+        List<String> savedRecipesNames = new ArrayList<>();
+        for (String url:savedRecipes){
+            try {
+                Document doc = Jsoup.connect(url).get();
+                savedRecipesNames.add(doc.title());}
+            catch (IOException e) {
+                ;
+            }
+        } // Add titles instead of Links
+        mAdapter2 = new ArrayAdapter<String>(this, R.layout.urldisplay, savedRecipesNames);
+        savedRList = findViewById(R.id.urlList);
+        savedRList.setAdapter(mAdapter2);
+        setNavDrawer();
+        savedRList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Uri uri = Uri.parse(savedRecipes.get(i));
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+    }
+
 
     private void getWebsite(String url) {
         Log.d("getWebsite", "getWebsite: url: " + url);
@@ -62,6 +189,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 Document doc = Jsoup.connect(url).get();
                 String title = doc.title();
+                savedRecipes.add(url);
                 List<String> ingredients = Parser.findVar(doc.toString());
                 builder.append(title).append("\n");
 
@@ -92,7 +220,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
             runOnUiThread(() -> {
-                result.setText(builder.toString());
                 arrayAdapter.notifyDataSetChanged();
             });
         }).start();
@@ -119,7 +246,10 @@ public class MainActivity extends AppCompatActivity {
             arrayAdapter.notifyDataSetChanged();
         });
 
+
     }
+
+
 
     private void getURL(){
         GetURLDialogue dialogue;

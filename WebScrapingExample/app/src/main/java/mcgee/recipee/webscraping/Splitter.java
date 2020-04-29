@@ -3,7 +3,7 @@ import android.util.Log;
 
 import java.util.*;
 
-class Splitter {
+public class Splitter {
 
 
     // Checks if a string is numeric, returns a boolean
@@ -33,7 +33,7 @@ class Splitter {
         for (int i = 0; i < oldstr.length(); i++){
 
             char curr = oldstr.charAt(i);
-            Log.d("sdfsfas", "string='"+str+"' curr='"+curr+"'");
+            //Log.d("sdfsfas", "string='"+str+"' curr='"+curr+"'");
             if (checking){
                 if (Character.isDigit(curr)){
                     if (!denom){
@@ -233,9 +233,9 @@ class Splitter {
                 level = level + 1;
             }
             else if (oldstr.charAt(i) == ')'){
-                level = level - 1;
+                level = 0;
             }
-            else if (level <= 0){
+            if (level <= 0){
                 str = str + oldstr.charAt(i);
             }
         }
@@ -317,10 +317,107 @@ class Splitter {
                 "serving", "and", "drained", "rinsed",
                 "chopped", "can", "cans", "one", "at",
                 "softened", "room", "temperature", "to", "a",
-                "an", "cooked", "grated", "beaten");
+                "an", "cooked", "grated", "beaten", "taste", "or", "dash", "sea");
         List<String> measurements = Arrays.asList("cup", "cups", "g", "mg",
                 "grams", "gram", "oz",
-                "ounces", "ounce", "pounds",
+                "ounces", "ounce", "pounds", "pound",
+                "teaspoon", "teaspoons", "tablespoon",
+                "tablespoons", "tsp", "tbsp");
+
+        str = str.replaceAll("[,:]", "").toLowerCase();
+        str = noCarrots(str);
+        str = noParenth(str);
+        str = fracChar(str);
+        str = fracToDec(spaceGrams(str));
+        str = writtenNums(str, measurements);
+        str = str.replaceAll("[-()*]", " ");
+        parts = str.split(" ");
+
+        boolean enteredNum = false;
+        String mVal = "1", mType = "";
+        Log.d("Should be a number: ", parts[0]);
+        for (int i = 0; i < parts.length; i++){
+            if (isNumeric(parts[i])){
+                mVal = parts[i];
+                enteredNum = true;
+            }
+            else if (measurements.contains(parts[i])){
+                mType = parts[i];
+            }
+            else if (remove.contains(parts[i])){
+                ; //do nothing
+            }
+            else {
+                ret[0] = ret[0] + parts[i] + " ";
+            }
+
+        }
+        if(ret[0].contains("salt pepper")){
+            ret[0] = "salt and pepper";
+        }
+        if(ret[0].startsWith("egg")){
+            ret[0] = "eggs";
+        }
+        ret[1] = mVal;
+        if (mType.equals("")){
+            ret[2] = "units";
+        }
+        else {
+            ret[2] = consistentMeasurements(mType);
+        }
+        ret[0] = ret[0].trim().replace("[\n\r]", "");
+
+        return ret;
+    }
+
+    public static String consistentMeasurements(String str){
+        switch(str){
+            case("cup"):
+            case("cups"):
+                return "cups";
+            case("g"):
+            case("grams"):
+            case("gram"):
+                return "g";
+            case("milligrams"):
+            case("mg"):
+                return "mg";
+            case("ounces"):
+            case("ounce"):
+            case("oz"):
+                return "oz";
+            case("tablespoon"):
+            case("tablespoons"):
+            case("tbsp"):
+                return "tbsp";
+            case("teaspoon"):
+            case("teaspoons"):
+            case("tsp"):
+                return "tsp";
+            case("pound"):
+            case("pounds"):
+                return "lbs";
+        }
+        return str;
+    }
+
+    // Returns just a string for the name.
+    // The exact same as the above, just doesn't return measurements and quantity.
+    public static String getNameOnly(String str){
+        String[] ret = new String[3];
+        ret[0] = ""; //name of the ingredient
+        ret[1] = ""; //how many of the ingredient
+        ret[2] = ""; //unit of measurement
+        String[] parts;
+
+        List<String> remove = Arrays.asList("of", "diced", "crushed", "", "for",
+                "serving", "and", "drained", "rinsed",
+                "chopped", "can", "cans", "one", "at",
+                "softened", "room", "temperature", "to", "a",
+                "an", "cooked", "grated", "beaten", "or", "dash", "sea");
+        List<String> measurements = Arrays.asList("cup", "cups", "g", "mg",
+                "grams", "gram", "oz",
+                "ounces", "ounce", "pounds", "pound",
                 "teaspoon", "teaspoons", "tablespoon",
                 "tablespoons", "tsp", "tbsp");
 
@@ -351,16 +448,22 @@ class Splitter {
             }
 
         }
+        if(ret[0].contains("salt pepper")){
+            ret[0] = "salt and pepper";
+        }
+        if(ret[0].startsWith("egg")){
+            ret[0] = "eggs";
+        }
         ret[1] = mVal;
         if (mType.equals("")){
-            ret[2] = "units";
+            ret[2] = "items";
         }
         else {
-            ret[2] = mType;
+            ret[2] = consistentMeasurements(mType);
         }
         ret[0] = ret[0].trim().replace("[\n\r]", "");
 
-        return ret;
+        return ret[0];
     }
 
 }

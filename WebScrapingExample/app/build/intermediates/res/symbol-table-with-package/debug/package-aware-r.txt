@@ -1384,6 +1384,7 @@ drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_calendar_black_24dp
 drawable ic_clear_black_24dp
+drawable ic_close
 drawable ic_edit_black_24dp
 drawable ic_keyboard_arrow_left_black_24dp
 drawable ic_keyboard_arrow_right_black_24dp
@@ -1419,6 +1420,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable rectangle_border
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1429,6 +1431,8 @@ id BOTTOM_START
 id CTRL
 id FUNCTION
 id META
+id NavList
+id Recipetitle
 id SHIFT
 id SYM
 id ScrollView01
@@ -1488,7 +1492,6 @@ id actions
 id activity_chooser_view_content
 id activity_main
 id add
-id addIndividualButton
 id adjust_height
 id adjust_width
 id alertTitle
@@ -1503,7 +1506,7 @@ id bottom
 id box
 id btnLogin
 id btnRegister
-id button
+id button2
 id buttonPanel
 id cancel
 id cancel_button
@@ -1534,6 +1537,7 @@ id dark
 id date_picker_actions
 id decor_content_parent
 id default_activity_button
+id delete_item
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1543,6 +1547,7 @@ id dialog_button
 id dimensions
 id direct
 id disableHome
+id drawer_layout
 id dropdown_menu
 id edit_query
 id end
@@ -1563,7 +1568,6 @@ id filter_chip
 id fitToContents
 id fixed
 id forever
-id getBtn
 id ghost_view
 id ghost_view_holder
 id gone
@@ -1593,6 +1597,7 @@ id line3
 id listMode
 id list_item
 id list_view
+id loginbutton
 id masked
 id message
 id middle
@@ -1650,7 +1655,6 @@ id progress_circular
 id progress_horizontal
 id quantity
 id radio
-id result
 id right
 id right_icon
 id right_side
@@ -1737,6 +1741,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id urlList
 id useLogo
 id view_offset_helper
 id visible
@@ -1824,6 +1829,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout display_urls
 layout enter_item
 layout enter_url
 layout listitem
@@ -1855,6 +1861,7 @@ layout mtrl_picker_header_title_text
 layout mtrl_picker_header_toggle
 layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
+layout navlist
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -1877,6 +1884,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+layout urldisplay
 menu navigation_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
