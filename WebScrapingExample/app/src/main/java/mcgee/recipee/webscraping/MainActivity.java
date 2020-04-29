@@ -75,13 +75,13 @@ public class MainActivity extends AppCompatActivity{
         mDrawerList = (ListView)findViewById(R.id.NavList);
         String[] osArray = { "My Shopping List                                           ",
                              "My Current Recipes                                         ",
-                             "",
+                             "                                  ",
                              "Add New Ingredient                                         ",
                              "Add New Recipe                                             ",
-                             "",
+                             "                                  ",
                              "Suggested Recipes                                          ",
                              "My Saved Shopping Lists                                    "};
-        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
+        mAdapter = new ArrayAdapter<String>(this, R.layout.navlist, osArray);
         mDrawerList.setAdapter(mAdapter);
     }
 

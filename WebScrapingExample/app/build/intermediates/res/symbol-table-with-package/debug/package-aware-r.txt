@@ -1861,6 +1861,7 @@ layout mtrl_picker_header_title_text
 layout mtrl_picker_header_toggle
 layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
+layout navlist
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big

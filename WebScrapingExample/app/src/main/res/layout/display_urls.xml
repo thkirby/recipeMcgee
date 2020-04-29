@@ -14,6 +14,7 @@
         <ListView
             android:id="@+id/urlList"
             android:layout_width="181dp"
+            android:fontFamily="@font/cousine_bold"
             android:layout_height="664dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
