@@ -1,6 +1,7 @@
 package mcgee.recipee.webscraping;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,13 +24,13 @@ public class CustomAdapter extends android.widget.ArrayAdapter<Ingredient>{
         TextView txtName;
         TextView txtQuantity;
         CheckBox checkBox;
+        TextView delete;
     }
 
     public CustomAdapter(ArrayList<Ingredient> data, Context context) {
         super(context, R.layout.listitem, data);
         this.dataSet = data;
         this.mContext=context;
-
     }
 
     private int lastPosition = -1;
@@ -51,6 +52,7 @@ public class CustomAdapter extends android.widget.ArrayAdapter<Ingredient>{
             viewHolder.txtName = convertView.findViewById(R.id.name);
             viewHolder.txtQuantity = convertView.findViewById(R.id.quantity);
             viewHolder.checkBox = convertView.findViewById(R.id.box);
+            viewHolder.delete=convertView.findViewById(R.id.delete_item);
 
             result=convertView;
 
@@ -76,8 +78,17 @@ public class CustomAdapter extends android.widget.ArrayAdapter<Ingredient>{
             }
         });
 
+        viewHolder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("check","i did it");
+                dataSet.remove(ingredient);
+                notifyDataSetChanged();
+            }
+        });
         // Return the completed view to render on screen
         return convertView;
     }
 
 }
+

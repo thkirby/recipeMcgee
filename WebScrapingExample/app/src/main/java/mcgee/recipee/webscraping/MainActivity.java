@@ -1,11 +1,14 @@
 package mcgee.recipee.webscraping;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -48,8 +51,10 @@ public class MainActivity extends AppCompatActivity{
     CustomAdapter arrayAdapter;
     AddIndividualDialogue addIndividualDialogue;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("me", "my");
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         super.onCreate(savedInstanceState);
@@ -63,8 +68,8 @@ public class MainActivity extends AppCompatActivity{
 
         suggestRecipes = new GetSimilar();
         savedRecipes = new ArrayList<String>();
-
     }
+
 
     private void addDrawerItems() {
         mDrawerList = (ListView)findViewById(R.id.NavList);
@@ -243,6 +248,8 @@ public class MainActivity extends AppCompatActivity{
 
 
     }
+
+
 
     private void getURL(){
         GetURLDialogue dialogue;

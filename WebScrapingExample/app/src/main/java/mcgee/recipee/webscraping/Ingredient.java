@@ -36,6 +36,7 @@ public class Ingredient {
     public void setQuantity(float quantity){
         this.quantity = quantity;
     }
+
 }
 
 
